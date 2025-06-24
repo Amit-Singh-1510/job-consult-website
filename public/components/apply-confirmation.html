@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Application Confirmation - JobConsult</title>
+    <link rel="stylesheet" href="/public/CSS/styles.css" />
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f0f8ff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .confirmation-box {
+            background: white;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
+            text-align: center;
+            max-width: 500px;
+        }
+
+        .confirmation-box h2 {
+            color: #004080;
+            margin-bottom: 15px;
+        }
+
+        .confirmation-box p {
+            font-size: 16px;
+            margin-bottom: 20px;
+        }
+
+        .btn {
+            display: inline-block;
+            margin: 10px;
+            padding: 12px 20px;
+            background: #004080;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .btn:hover {
+            background: #003060;
+        }
+
+        .checkmark {
+            font-size: 60px;
+            color: green;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="confirmation-box">
+        <div class="checkmark">✅</div>
+        <h2>Application Submitted!</h2>
+        <p>Thank you for applying. Your application has been successfully submitted.</p>
+
+        <a href="job-details.html" class="btn">🔍 View Job</a>
+        <a href="job-listings.html" class="btn">🏃 Browse More Jobs</a>
+    </div>
+
+</body>
+
+</html>

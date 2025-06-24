@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JobConsult - Find Your Dream Job</title>
+    <link rel="stylesheet" href="CSS/styles.css" />
+
+    <!-- Slick Carousel CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css" />
+</head>
+
+<body>
+    <!-- ✅ Only Navbar should be inside header -->
+    <header>
+        <nav class="navbar">
+            <div class="logo-container">
+                <img src="assets/images/logo (2).png" alt="Logo" class="logo-img">
+                <div class="logo-text">JobConsult</div>
+            </div>
+
+            <ul class="nav-links">
+                <li><a href="#">Home</a></li>
+                <li><a href="components/jobs.html">Jobs</a></li>
+                <li><a href="components/about.html">About</a></li>
+                <li><a href="components/contact.html">Contact</a></li>
+                <li><a href="components/login.html" class="btn">Login</a></li>
+            </ul>
+        </nav>
+    </header>
+
+
+    <!-- ✅ Other sections outside <header> -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Find Your Dream Job Here</h1>
+            <p>Search jobs by title, location, or industry</p>
+            <form class="search-bar">
+                <input type="text" placeholder="Job title or keyword" />
+                <input type="text" placeholder="Location" />
+                <button type="submit">Search</button>
+            </form>
+        </div>
+    </section>
+
+    <section class="categories">
+        <h2>Popular Job Categories</h2>
+        <div class="category-grid">
+            <div class="category-card">IT & Software</div>
+            <div class="category-card">Marketing</div>
+            <div class="category-card">Sales</div>
+            <div class="category-card">Finance</div>
+            <div class="category-card">Human Resources</div>
+            <div class="category-card">Customer Support</div>
+        </div>
+    </section>
+
+    <section class="latest-jobs">
+        <h2>Latest Job Openings</h2>
+        <div class="jobs-carousel">
+            <div class="job-card">
+                <h3>Frontend Developer</h3>
+                <p>Company: WebTech</p>
+                <span>Location: Bangalore</span>
+            </div>
+            <div class="job-card">
+                <h3>Marketing Analyst</h3>
+                <p>Company: DataMinds</p>
+                <span>Location: Mumbai</span>
+            </div>
+            <div class="job-card">
+                <h3>UI/UX Designer</h3>
+                <p>Company: Creatives Inc</p>
+                <span>Location: Remote</span>
+            </div>
+            <div class="job-card">
+                <h3>HR Executive</h3>
+                <p>Company: PeoplePro</p>
+                <span>Location: Delhi</span>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta-section">
+        <div class="cta-box seeker">
+            <h2>Looking for a Job?</h2>
+            <p>Create your profile and apply for jobs instantly</p>
+            <a href="components/login.html" class="cta-btn">Get Started</a>
+        </div>
+        <div class="cta-box employer">
+            <h2>Need Candidates?</h2>
+            <p>Post jobs and connect with top talent</p>
+            <a href="components/post-job.html" class="cta-btn">Post a Job</a>
+        </div>
+    </section>
+
+    <section class="testimonials">
+        <h2>What Our Users Say</h2>
+        <div class="testimonial-container">
+            <div class="testimonial">
+                <p>"I found my dream job through JobConsult in just a week!"</p>
+                <h4>- Anjali Mehra, Software Engineer</h4>
+            </div>
+            <div class="testimonial">
+                <p>"Hiring candidates became effortless with JobConsult."</p>
+                <h4>- Rajeev Gupta, HR Manager</h4>
+            </div>
+            <div class="testimonial">
+                <p>"Best platform for job seekers and recruiters alike!"</p>
+                <h4>- Sneha Sharma, Data Analyst</h4>
+            </div>
+        </div>
+    </section>
+
+    <section class="partners">
+        <h2>Trusted by Top Companies</h2>        <div class="partner-logos">
+            <img src="assets/images/google.png" alt="Google" />
+            <img src="assets/images/amazon.png" alt="Amazon" />
+            <img src="assets/images/microsoft.png" alt="Microsoft" />
+            <img src="assets/images/tcs.png" alt="TCS" />
+            <img src="assets/images/Infosys.png" alt="Infosys" />
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-left">
+                <h3>JobConsult</h3>
+                <p>Your trusted job partner. Connecting talent with opportunities.</p>
+            </div>
+            <div class="footer-links">
+                <a href="index.html">Home</a>
+                <a href="components/jobs.html">Jobs</a>
+                <a href="components/about.html">About</a>
+                <a href="components/contact.html">Contact</a>
+            </div>
+            <div class="footer-contact">
+                <p>Email: support@jobconsult.com</p>
+                <p>Phone: +91 98765 43210</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 JobConsult. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+
+    <script>
+        $(document).ready(function () {
+            $('.partner-logos').slick({
+                slidesToShow: 4,
+                slidesToScroll: 1,
+                autoplay: true,
+                autoplaySpeed: 2000,
+                arrows: false,
+                dots: false,
+                responsive: [
+                    { breakpoint: 1024, settings: { slidesToShow: 3 } },
+                    { breakpoint: 768, settings: { slidesToShow: 2 } },
+                    { breakpoint: 480, settings: { slidesToShow: 1 } }
+                ]            });
+        });
+    </script>
+    
+    <script src="js/scripts.js"></script>
+</body>
+
+</html>

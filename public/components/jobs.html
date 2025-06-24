@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Jobs - JobConsult</title>
+  <link rel="stylesheet" href="/public/CSS/styles.css" />
+</head>
+
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="logo-container">
+      <img src="../assets/images/logo (2).png" alt="Logo" class="logo-img">
+      <div class="logo-text">JobConsult</div>
+    </div>
+    <ul class="nav-links">
+      <li><a href="../index.html">Home</a></li>
+      <li><a href="jobs.html" class="active">Jobs</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="login.html" class="btn">Login</a></li>
+    </ul>
+  </nav>
+
+  <!-- Filter Section -->
+  <section class="filters">
+    <h2>Find Your Next Job</h2>
+    <form id="filterForm">
+      <input type="text" id="searchTitle" placeholder="Search by job title..." /> <select id="locationFilter"
+        aria-label="Filter by location">
+        <option value="">All Locations</option>
+        <option value="delhi">Delhi</option>
+        <option value="bangalore">Bangalore</option>
+        <option value="mumbai">Mumbai</option>
+      </select>
+      <select id="typeFilter" aria-label="Filter by job type">
+        <option value="">All Job Types</option>
+        <option value="fulltime">Full Time</option>
+        <option value="parttime">Part Time</option>
+        <option value="remote">Remote</option>
+      </select>
+      <button type="submit">Search</button>
+    </form>
+  </section>
+
+  <!-- Jobs Listing -->
+  <section class="job-listings">
+    <div class="job-card">
+      <h3>Frontend Developer</h3>
+      <p><strong>Company:</strong> Infosys</p>
+      <p><strong>Location:</strong> Bangalore</p>
+      <p><strong>Type:</strong> Full Time</p>
+      <a href="job-details.html" class="apply-btn">View Details</a>
+    </div>
+
+    <div class="job-card">
+      <h3>UI/UX Designer</h3>
+      <p><strong>Company:</strong> TCS</p>
+      <p><strong>Location:</strong> Mumbai</p>
+      <p><strong>Type:</strong> Part Time</p>
+      <a href="job-details.html" class="apply-btn">View Details</a>
+    </div>
+
+    <div class="job-card">
+      <h3>Backend Engineer</h3>
+      <p><strong>Company:</strong> Wipro</p>
+      <p><strong>Location:</strong> Remote</p>
+      <p><strong>Type:</strong> Remote</p>
+      <a href="job-details.html" class="apply-btn">View Details</a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-content">
+      <div class="footer-left">
+        <h3>JobConsult</h3>
+        <p>India's trusted job portal for seekers & recruiters.</p>
+      </div>
+      <div class="footer-links">
+        <a href="../index.html">Home</a>
+        <a href="jobs.html">Jobs</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+      </div>
+      <div class="footer-contact">
+        <p>Email: support@jobconsult.com</p>
+        <p>Phone: +91 98765 43210</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2025 JobConsult. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- Add jQuery for filter functionality -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script>
+    // Job filter functionality
+    $("#filterForm").submit(function (e) {
+      e.preventDefault();
+      const keyword = $("#searchTitle").val().toLowerCase();
+      const location = $("#locationFilter").val();
+      const type = $("#typeFilter").val();
+
+      $(".job-card").each(function () {
+        const title = $(this).find("h3").text().toLowerCase();
+        const jobLoc = $(this).find("p:contains('Location')").text().toLowerCase();
+        const jobType = $(this).find("p:contains('Type')").text().toLowerCase();
+
+        const matchTitle = keyword === "" || title.includes(keyword);
+        const matchLoc = location === "" || jobLoc.includes(location.toLowerCase());
+        const matchType = type === "" || jobType.includes(type.toLowerCase());
+
+        if (matchTitle && matchLoc && matchType) {
+          $(this).show();
+        } else {
+          $(this).hide();
+        }
+      });
+    });
+  </script>
+
+</body>
+
+</html>

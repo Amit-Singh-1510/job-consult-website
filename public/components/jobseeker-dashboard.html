@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Job Seeker Dashboard - JobConsult</title>
+  <link rel="stylesheet" href="/public/CSS/styles.css" />
+  <style>
+    .dashboard {
+      display: flex;
+      flex-wrap: wrap;
+      padding: 30px;
+    }
+
+    .sidebar {
+      width: 220px;
+      background: #004080;
+      color: white;
+      padding: 20px;
+      border-radius: 8px;
+      height: fit-content;
+    }
+
+    .sidebar h2 {
+      font-size: 20px;
+      margin-bottom: 20px;
+    }
+
+    .sidebar ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .sidebar ul li {
+      margin: 10px 0;
+      cursor: pointer;
+    }
+
+    .sidebar ul li:hover {
+      text-decoration: underline;
+    }
+
+    .dashboard-content {
+      flex: 1;
+      margin-left: 20px;
+      padding: 20px;
+      background: #f9f9f9;
+      border-radius: 8px;
+    }
+
+    .section {
+      display: none;
+    }
+
+    .section.active {
+      display: block;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      background: white;
+      border-radius: 8px;
+      overflow: hidden;
+    }
+
+    table th,
+    table td {
+      padding: 12px;
+      border-bottom: 1px solid #ddd;
+    }
+
+    input,
+    textarea,
+    select {
+      width: 100%;
+      padding: 10px;
+      margin-top: 10px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+    }
+
+    .btn {
+      padding: 10px 20px;
+      background: #004080;
+      color: white;
+      border: none;
+      margin-top: 10px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .btn:hover {
+      background: #003060;
+    }
+
+    @media (max-width: 768px) {
+      .dashboard {
+        flex-direction: column;
+      }
+
+      .dashboard-content {
+        margin-left: 0;
+        margin-top: 20px;
+      }
+
+      .sidebar {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="logo-container">
+      <img src="../assets/images/logo (2).png" alt="Logo" class="logo-img">
+      <div class="logo-text">JobConsult</div>
+    </div>
+    <ul class="nav-links">
+      <li><a href="../index.html">Home</a></li>
+      <li><a href="jobs.html">Jobs</a></li>
+      <li><a href="logout.html" class="btn">Logout</a></li>
+    </ul>
+  </nav>
+
+  <!-- Dashboard -->
+  <div class="dashboard">
+    <!-- Sidebar -->
+    <div class="sidebar">
+      <h2>Job Seeker</h2>
+      <ul>
+        <li onclick="showSection('applied')">Applied Jobs</li>
+        <li onclick="showSection('saved')">Job Preferences</li>
+        <li onclick="showSection('resume')">Resume Upload</li>
+        <li onclick="showSection('profile')">Edit Profile</li>
+      </ul>
+    </div>
+
+    <!-- Main Content -->
+    <div class="dashboard-content">
+      <!-- Applied Jobs -->
+      <div id="applied" class="section active">
+        <h3>Applied Jobs</h3>
+        <table>
+          <thead>
+            <tr>
+              <th>Job Title</th>
+              <th>Company</th>
+              <th>Date Applied</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Frontend Developer</td>
+              <td>ABC Pvt Ltd</td>
+              <td>June 10, 2025</td>
+            </tr>
+            <tr>
+              <td>UI/UX Designer</td>
+              <td>XYZ Ltd</td>
+              <td>June 12, 2025</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Job Preferences -->
+      <div id="saved" class="section">
+        <h3>Job Preferences</h3>
+        <label>Preferred Job Titles</label>
+        <input type="text" placeholder="e.g., Web Developer, Designer" />
+
+        <label>Preferred Locations</label>
+        <input type="text" placeholder="e.g., Remote, Delhi, Bangalore" />
+
+        <label>Job Type</label>
+        <select>
+          <option value="full">Full Time</option>
+          <option value="part">Part Time</option>
+          <option value="intern">Internship</option>
+        </select>
+
+        <button class="btn">Save Preferences</button>
+      </div>
+
+      <!-- Resume Upload -->
+      <div id="resume" class="section">
+        <h3>Upload/Update Resume</h3>
+        <input type="file" accept=".pdf,.doc,.docx" />
+        <button class="btn">Upload Resume</button>
+      </div>
+
+      <!-- Edit Profile -->
+      <div id="profile" class="section">
+        <h3>Edit Profile</h3>
+        <label>Name</label>
+        <input type="text" value="Amit Singh" />
+
+        <label>Email</label>
+        <input type="email" value="amit@example.com" />
+
+        <label>Bio</label>
+        <textarea rows="4">Brief summary about yourself</textarea>
+
+        <button class="btn">Update Profile</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- JS: Tab Switching -->
+  <script>
+    function showSection(id) {
+      document.querySelectorAll('.section').forEach(sec => sec.classList.remove('active'));
+      document.getElementById(id).classList.add('active');
+    }
+  </script>
+
+</body>
+
+</html>

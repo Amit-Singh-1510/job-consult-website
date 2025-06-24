@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Employer Dashboard - JobConsult</title>
+    <link rel="stylesheet" href="/public/CSS/styles.css" />
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        .dashboard {
+            display: flex;
+            padding: 30px;
+        }
+
+        .sidebar {
+            width: 220px;
+            background: #004080;
+            color: white;
+            padding: 20px;
+            border-radius: 8px;
+        }
+
+        .sidebar h2 {
+            font-size: 20px;
+            margin-bottom: 20px;
+        }
+
+        .sidebar ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .sidebar ul li {
+            margin: 12px 0;
+            cursor: pointer;
+        }
+
+        .sidebar ul li:hover {
+            text-decoration: underline;
+        }
+
+        .dashboard-content {
+            flex: 1;
+            margin-left: 20px;
+            padding: 20px;
+            background: #f9f9f9;
+            border-radius: 8px;
+        }
+
+        .section {
+            display: none;
+        }
+
+        .section.active {
+            display: block;
+        }
+
+        table {
+            width: 100%;
+            background: white;
+            border-radius: 8px;
+            border-collapse: collapse;
+        }
+
+        table th,
+        table td {
+            padding: 12px;
+            border-bottom: 1px solid #ddd;
+        }
+
+        input,
+        textarea {
+            width: 100%;
+            padding: 10px;
+            margin-top: 10px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+
+        .btn {
+            padding: 10px 20px;
+            background: #004080;
+            color: white;
+            border: none;
+            margin-top: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            background: #003060;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="logo">JobConsult</div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="post-job.html">Post a Job</a></li>
+            <li><a href="logout.html" class="btn">Logout</a></li>
+        </ul>
+    </nav>
+
+    <!-- Dashboard -->
+    <div class="dashboard">
+        <!-- Sidebar -->
+        <div class="sidebar">
+            <h2>Employer Panel</h2>
+            <ul>
+                <li onclick="showSection('jobs')">Posted Jobs</li>
+                <li onclick="showSection('applications')">Applications</li>
+                <li onclick="showSection('company')">Company Profile</li>
+            </ul>
+        </div>
+
+        <!-- Main Content -->
+        <div class="dashboard-content">
+
+            <!-- Posted Jobs -->
+            <div id="jobs" class="section active">
+                <h3>Your Posted Jobs</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Job Title</th>
+                            <th>Location</th>
+                            <th>Type</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>React Developer</td>
+                            <td>Remote</td>
+                            <td>Full Time</td>
+                            <td>
+                                <button class="btn">Edit</button>
+                                <button class="btn" style="background:red;">Delete</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Marketing Executive</td>
+                            <td>Mumbai</td>
+                            <td>Internship</td>
+                            <td>
+                                <button class="btn">Edit</button>
+                                <button class="btn" style="background:red;">Delete</button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Applications -->
+            <div id="applications" class="section">
+                <h3>Job Applications</h3>
+                <p>This section will list all job seekers who applied. (You can integrate with backend later.)</p>
+                <ul>
+                    <li>👤 Amit Singh - Applied for React Developer</li>
+                    <li>👤 Priya Sharma - Applied for Marketing Executive</li>
+                </ul>
+            </div>
+
+            <!-- Company Profile -->
+            <div id="company" class="section">
+                <h3>Company Profile</h3>
+                <label>Company Name</label>
+                <input type="text" value="ABC Pvt Ltd" />
+
+                <label>Email</label>
+                <input type="email" value="hr@abc.com" />
+
+                <label>Description</label>
+                <textarea rows="4">Leading IT firm hiring skilled developers and marketers.</textarea>
+
+                <button class="btn">Update Profile</button>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Script to switch tabs -->
+    <script>
+        function showSection(id) {
+            document.querySelectorAll('.section').forEach(sec => sec.classList.remove('active'));
+            document.getElementById(id).classList.add('active');
+        }
+    </script>
+
+</body>
+
+</html>

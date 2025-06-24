@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Career Tips - JobConsult</title>
+    <link rel="stylesheet" href="css/styles.css" />
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f8f9fc;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: auto;
+            padding: 40px 20px;
+        }
+
+        h2 {
+            text-align: center;
+            color: #004080;
+            margin-bottom: 30px;
+        }
+
+        .search-bar {
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        .search-bar input {
+            width: 60%;
+            padding: 12px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+        }
+
+        .blog-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+        }
+
+        .blog-card {
+            background: white;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 0 8px rgba(0, 0, 0, 0.08);
+            transition: all 0.2s ease;
+        }
+
+        .blog-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+        }
+
+        .blog-card h3 {
+            color: #004080;
+            margin-bottom: 10px;
+        }
+
+        .blog-card p {
+            font-size: 14px;
+            color: #333;
+        }
+
+        .blog-card .date {
+            font-size: 13px;
+            color: #888;
+            margin-bottom: 12px;
+        }
+
+        .read-more {
+            display: inline-block;
+            margin-top: 10px;
+            color: #004080;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .read-more:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <h2>Career Tips & Advice</h2>
+
+        <div class="search-bar">
+            <input type="text" placeholder="Search blog posts..." />
+        </div>
+
+        <div class="blog-grid">
+            <!-- Blog 1 -->
+            <div class="blog-card">
+                <div class="date">📅 June 10, 2025</div>
+                <h3>How to Write a Perfect Resume</h3>
+                <p>A professional resume is the key to landing interviews. Learn what hiring managers want to see...</p>
+                <a class="read-more" href="#">Read More →</a>
+            </div>
+
+            <!-- Blog 2 -->
+            <div class="blog-card">
+                <div class="date">📅 May 28, 2025</div>
+                <h3>Top 5 Job Interview Tips</h3>
+                <p>Nail your next interview with these proven strategies, including what to wear, say, and ask...</p>
+                <a class="read-more" href="#">Read More →</a>
+            </div>
+
+            <!-- Blog 3 -->
+            <div class="blog-card">
+                <div class="date">📅 May 10, 2025</div>
+                <h3>10 High-Demand Tech Skills in 2025</h3>
+                <p>Want to stay competitive? These are the top skills companies are hiring for this year...</p>
+                <a class="read-more" href="#">Read More →</a>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>
